@@ -18,3 +18,18 @@ model User {
   email String  @unique
   name  String?
 }
+
+model Candidato {
+  documento    String   @id @db.VarChar(20)
+  nombre       String   @db.VarChar(100)
+  apellido     String   @db.VarChar(100)
+  email        String   @unique @db.VarChar(150)
+  telefono     String?  @db.VarChar(20)
+  direccion    String?  @db.VarChar(200)
+  educacion    String?  @db.VarChar(200)
+  experiencia  String?  @db.VarChar(500)
+  cv           Bytes?
+  cvNombre     String?  @db.VarChar(200)
+  creadoEn     DateTime @default(now())
+  ultimaModificacion DateTime @updatedAt
+}
